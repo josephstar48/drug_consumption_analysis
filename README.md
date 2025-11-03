@@ -16,7 +16,7 @@ This project explores how psychological and demographic factors influence drug c
 Personality traits (such as Neuroticism, Impulsivity, and Sensation Seeking) and demographic factors (age, gender, education) significantly influence the likelihood and frequency of drug consumption.
 
 ### Data Source
-**Dataset:** [Drug Consumption (UCI) — Kaggle](https://www.kaggle.com/datasets/sjleshrac/drug-consumption-uci)  
+**Dataset:** [Drug Consumption (UCI) — Kaggle](https://www.kaggle.com/datasets/obeykhadija/drug-consumptions-uci)  
 **Rows:** 1,885 | **Columns:** 32
 
 ### Tools & Libraries
