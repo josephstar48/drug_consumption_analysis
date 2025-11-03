@@ -1,16 +1,24 @@
 import pandas as pd
 
+# Creates global constants for filepaths
+FILEPATH_RAW = '../data/raw/Drug_Consumption.csv'
+FILEPATH_CLEANED = '../data/cleaned/cleaned_drug_consumption.csv'
+
 """Loads the dataset from a CSV file into a pandas DataFrame."""
 def load_dataset(filepath: str) -> pd.DataFrame:
   return pd.read_csv(filepath)
+
+"""Saves the cleaned DataFrame to a CSV file."""
+def save_cleaned_dataset(df: pd.DataFrame, filepath: str) -> None:
+  df.to_csv(filepath, index=False)
 
 """Cleans the column names of the DataFrame by stripping whitespace, converting to lowercase, and replacing spaces with underscores."""
 def clean_column_names(df: pd.DataFrame) -> pd.DataFrame:
   df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_')
   return df
 
-"""Converts drug use categories in specified columns to numerical values."""
-def converts_drug_use_categories(df: pd.DataFrame, drug_cols: list) -> pd.DataFrame:
+"""Converts drug use ratings in specified columns to numerical values."""
+def convert_drug_use_ratings(df: pd.DataFrame, drug_cols: list) -> pd.DataFrame:
 
   category_dict = {
       'CL0': 0,  
@@ -25,8 +33,9 @@ def converts_drug_use_categories(df: pd.DataFrame, drug_cols: list) -> pd.DataFr
   df[drug_cols] = df[drug_cols].replace(category_dict)
   return df
 
-def converts_to_midpoint(df: pd.DataFrame, drug_cols: list) -> pd.DataFrame:
-    """Converts age ranges in Age column to their midpoint numerical values."""
+"""Converts age ranges in Age column to their midpoint numerical values."""
+def convert_to_midpoint(df: pd.DataFrame, drug_cols: list) -> pd.DataFrame:
+   
     midpoint_dict = {
         '18-24': 21,    
         '25-34': 29.5,  
@@ -38,4 +47,8 @@ def converts_to_midpoint(df: pd.DataFrame, drug_cols: list) -> pd.DataFrame:
 
     df[drug_cols] = df[drug_cols].replace(midpoint_dict)
     return df
+
+
+
+
 
