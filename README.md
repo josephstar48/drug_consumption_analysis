@@ -23,7 +23,7 @@ I performed data cleaning, exploratory analysis, and visualization to identify b
 ### Hypothesis
 Personality traits (such as Neuroticism, Impulsivity, and Sensation Seeking) and demographic factors (age, gender, education) significantly influence the likelihood and frequency of drug consumption.
 
-### Why Analysis on This Topic Matters
+### Why Analysis Of This Topic Matters?
 #### Understanding the behavioral and psychological factors behind substance use can:
 - Help inform public health and education strategies.
 - Identify risk profiles for early intervention.
@@ -49,18 +49,19 @@ Personality traits (such as Neuroticism, Impulsivity, and Sensation Seeking) and
 5. Feature Engineering: Created a drug_intensity_index representing total consumption across substances.
 6. Data Validation: Checked for duplicates, outliers, and consistent value ranges.
 
-#### Code Reference: src/data_cleaning.py 
+**Code Reference:** src/data_cleaning.py 
 
 ### Exploratory Visualizations
 
-#### Type	             #### Visualization	                           ####Purpose
-Demographics     	     Countplot (Age, Gender, Education)	           See population distribution
-Drug Use Overview	     Bar chart by drug type	                       Identify most/least used substances
-Correlation Heatmap	   Heatmap of all features	                     Reveal personality and usage relationships
-Boxplot	               Personality scores vs. drug usage	           Compare behavioral patterns
-Pairplot	             Between key personality traits	               Detect natural clustering
-Cluster Map            KMeans or hierarchical clustering	           Group users by usage patterns
-Word Cloud           	 Drug frequency visualization	                 Visual storytelling
+| **Type**              | **Visualization**                          | **Purpose**                                      |
+|-----------------------|--------------------------------------------|--------------------------------------------------|
+| Demographics          | Countplot (Age, Gender, Education)         | See population distribution                      |
+| Drug Use Overview     | Bar chart by drug type                     | Identify most/least used substances              |
+| Correlation Heatmap   | Heatmap of all features                    | Reveal personality and usage relationships       |
+| Boxplot               | Personality scores vs. drug usage          | Compare behavioral patterns                      |
+| Pairplot              | Between key personality traits             | Detect natural clustering                        |
+| Cluster Map           | KMeans or hierarchical clustering          | Group users by usage patterns                    |
+| Word Cloud            | Drug frequency visualization               | Visual storytelling                              |
 
 ### Key Analytical Steps
 -	Compute correlation matrix to find strongest personality–drug use relationships.
@@ -85,13 +86,13 @@ Word Cloud           	 Drug frequency visualization	                 Visual stor
 5. Key findings and recommendations  
 
 ### Reference
-- Kaggle Dataset: [Drug Consumption (UCI) — Kaggle](https://www.kaggle.com/datasets/obeykhadija/drug-consumptions-uci)  
+**Kaggle Dataset:** [Drug Consumption (UCI) — Kaggle](https://www.kaggle.com/datasets/obeykhadija/drug-consumptions-uci)  
 
 ### Contributors
 **Team:** Jose R. Estrella Sr.  
 **Program:** Galvanize Data Science & Analytics Bootcamp
 
 ### Contact
-#### Author: Jose R. Estrella Sr.
-E-mail: josephstar48@gmail.com
-GitHub: https://github.com/josephstar48 
+**Author:** Jose R. Estrella Sr.
+**E-mail:** josephstar48@gmail.com
+**GitHub:** https://github.com/josephstar48 
