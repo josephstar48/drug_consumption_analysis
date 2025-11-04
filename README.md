@@ -93,6 +93,6 @@ Personality traits (such as Neuroticism, Impulsivity, and Sensation Seeking) and
 **Program:** Galvanize Data Science & Analytics Bootcamp
 
 ### Contact
-**Author:** Jose R. Estrella Sr.
-**E-mail:** josephstar48@gmail.com
-**GitHub:** https://github.com/josephstar48 
+- **Author:** Jose R. Estrella Sr.
+- **E-mail:** josephstar48@gmail.com
+- **GitHub:** https://github.com/josephstar48 
