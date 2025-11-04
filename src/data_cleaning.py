@@ -48,7 +48,22 @@ def convert_to_midpoint(df: pd.DataFrame, drug_cols: list) -> pd.DataFrame:
     df[drug_cols] = df[drug_cols].replace(midpoint_dict)
     return df
 
+"""Changes column headers for personality traits to more descriptive names."""
+def rename_personality_traits(df: pd.DataFrame) -> pd.DataFrame:
+    df = df.rename(columns={
+        'Nscore': 'neuroticism_nscore',
+        'Escore': 'extraversion_escore',
+        'Oscore': 'openness_oscore',
+        'AScore': 'agreeableness_ascore',
+        'Cscore': 'conscientiousness_cscore',
+        'Impulsive': 'impulsivity_impulsive',
+        'SS': 'sensation_seeking_ss'
+    })
+    return df
 
-
-
-
+"""
+Creates a drug_intensity_position representing total consumption across substances.
+"""
+def add_drug_intensity_position(df: pd.DataFrame, drug_cols: list) -> pd.DataFrame:
+    df['drug_intensity_position'] = df[drug_cols].sum(axis=1)
+    return df

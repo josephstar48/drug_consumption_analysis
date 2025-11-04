@@ -1,4 +1,4 @@
-id,age,gender,education,country,ethnicity,nscore,escore,oscore,ascore,cscore,impulsive,ss,alcohol,amphet,amyl,benzos,caff,cannabis,choc,coke,crack,ecstasy,heroin,ketamine,legalh,lsd,meth,mushrooms,nicotine,semer,vsa
+id,age,gender,education,country,ethnicity,neuroticism_nscore,extraversion_escore,openness_oscore,agreeableness_ascore,conscientiousness_cscore,impulsivity_impulsive,sensation_seeking_ss,alcohol,amphet,amyl,benzos,caff,cannabis,choc,coke,crack,ecstasy,heroin,ketamine,legalh,lsd,meth,mushrooms,nicotine,semer,vsa
 2,29.5,M,Doctorate degree,UK,White,-0.67825,1.93886,1.43533,0.76096,-0.14277,-0.71126,-0.21575,5,2,2,0,6,4,6,3,0,4,0,2,0,2,3,0,4,0,0
 3,39.5,M,Professional certificate/ diploma,UK,White,-0.46725,0.80523,-0.84732,-1.6209,-1.0145,-1.37983,0.40148,6,0,0,0,6,3,4,0,0,0,0,0,0,0,0,1,0,0,0
 4,21.0,F,Masters degree,UK,White,-0.14882,-0.80615,-0.01928,0.59042,0.58489,-1.37983,-1.18084,4,0,0,3,5,2,4,2,0,0,0,2,0,0,0,0,2,0,0
