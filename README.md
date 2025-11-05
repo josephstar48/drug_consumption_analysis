@@ -33,7 +33,7 @@ Personality traits (such as Neuroticism, Impulsivity, and Sensation Seeking) and
 ### Data Source
 **Dataset:** [Drug Consumption (UCI) — Kaggle](https://www.kaggle.com/datasets/obeykhadija/drug-consumptions-uci)  
 **Records/Rows:** 1,885 participants
-**Columns/Features:** 32 attributes, including personality traits, demographics, and drug-use frequency acroff 18 substances.
+**Columns/Features:** 32 attributes, including personality traits, demographics, and drug-use frequency across 18 substances.
 
 ### Key Attibutes/Columns:
 - **Demographics:** Age, Gender, Education, Country, Ethnicity
@@ -46,8 +46,8 @@ Personality traits (such as Neuroticism, Impulsivity, and Sensation Seeking) and
 1. **Load Data:** Read CSV file and preview structure.
 2. **Standardize Columns:** Renamed columns and implemented uniformity with lowe case headers and underscore as needed.
 3. **Handle Missing Values:** N/A, all values are present in dataset.
-4. **Categorical Drug Levels/Scales:** Converted categorical usage (CL0–CL6) into numeric scores (0–6).
-5. **Feature Engineering:** Created a drug_intensity_index column representing total consumption across substances and a heavy_user column to display/flag frequent daily and weekly drug users.
+4. **Categorical Drug Levels/Scales:** Converted categorical usage (CL0–CL6) to numeric scores (0–6).
+5. **Feature Engineering:** Created a drug_intensity_position column representing total consumption across substances, heavy_user and usage_frequency columns to display/flag frequent daily and weekly drug users "heavy users", and a usage_frequency_label column for better readability of data and graphs.
 6. **Data Validation:** Checked for duplicates, outliers, and consistent value ranges.
 7. **Normalize Personality Scores:** Used for comparison (using Min-Max scaling or Z-scores).
 8. **Verify Data Balance:** Verified for all demographics and personality traits. 

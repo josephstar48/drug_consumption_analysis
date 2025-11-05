@@ -24,7 +24,7 @@ def plot_age_distribution(df: pd.DataFrame, age_col: str) -> None:
     plt.xlabel('Age')
     plt.ylabel('Count')
     plt.show() 
-
+    
 # *****Creates Counteplot Graph for gender distribution
 def plot_gender_distribution(df: pd.DataFrame, gender_col: str) -> None:
     plt.figure(figsize=(8,6))

@@ -163,5 +163,23 @@ def replace_outliers_with_mean(df: pd.DataFrame, col: str) -> pd.DataFrame:
     df[col] = df[col].apply(lambda x: mean_value if x > 6 else x)
     return df
 
+""" Converts float values in user_frequency column to String labels for better readability in visualizations."""
+
+def convert_usage_frequency_to_labels(df: pd.DataFrame) -> pd.DataFrame:
+
+    frequency_labels_dict = {
+        0: 'Never Used',
+        1: 'Used Over a Decade Ago',
+        2: 'Used in Last Decade',
+        3: 'Used in Last Year',
+        3.6: 'Used in Last Year',
+        4: 'Monthly User',
+        5: 'Weekly User',
+        6: 'Daily User'
+    }
+    df['usage_frequency_label'] = df['usage_frequency'].replace(frequency_labels_dict)
+
+    return df
+
 
 
