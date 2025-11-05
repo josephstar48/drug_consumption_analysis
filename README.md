@@ -33,21 +33,24 @@ Personality traits (such as Neuroticism, Impulsivity, and Sensation Seeking) and
 ### Data Source
 **Dataset:** [Drug Consumption (UCI) — Kaggle](https://www.kaggle.com/datasets/obeykhadija/drug-consumptions-uci)  
 **Records/Rows:** 1,885 participants
-**Columns/Features:** 32 attributes, including personality traits, demographics ,and drug-use frequency acroff 18 substances.
+**Columns/Features:** 32 attributes, including personality traits, demographics, and drug-use frequency acroff 18 substances.
 
 ### Key Attibutes/Columns:
-- Demographics: Age, Gender, Education, Country, Ethnicity
-- Personality: Neuroticism (Nscore), Extraversion (Escore), Openness (Oscore), Agreeableness (Ascore), Conscientiousness (Cscore), Impulsivity Sensation-Seeking (SS)
-- Substances: Alcohol, Cannabis, Cocaine, Heroin, LSD, etc.
-- Consumption Levels: CL0–CL6 (Never Used → Used in Last Day)
+- **Demographics:** Age, Gender, Education, Country, Ethnicity
+- **Personality:** Neuroticism (Nscore), Extraversion (Escore), Openness (Oscore), Agreeableness (Ascore), Conscientiousness (Cscore), Impulsivity (Impulsive), Sensation-Seeking (SS)
+- **Drug Usage:** 19 different drugs to include: Alcohol, Cannabis, Cocaine, Heroin, LSD, etc.
+- **Consumption Levels:** CL0(0) through CL6(6) (from Never Used to Used in Last Day)
+- **Control Variable:** Semer column (fictitious drug)
 
 ### Data Cleaning and Transformation Steps
-1. Load Data: Read CSV file and preview structure.
-2. Standardize Columns: Renamed columns and implemented uniformity with lowe case headers and underscore as needed.
-3. Handle Missing Values: N/A, all values were contained in dataset.
-4. Encode Drug Levels: Converted categorical usage (CL0–CL6) into numeric scores (0–6).
-5. Feature Engineering: Created a drug_intensity_index representing total consumption across substances.
-6. Data Validation: Checked for duplicates, outliers, and consistent value ranges.
+1. **Load Data:** Read CSV file and preview structure.
+2. **Standardize Columns:** Renamed columns and implemented uniformity with lowe case headers and underscore as needed.
+3. **Handle Missing Values:** N/A, all values are present in dataset.
+4. **Categorical Drug Levels/Scales:** Converted categorical usage (CL0–CL6) into numeric scores (0–6).
+5. **Feature Engineering:** Created a drug_intensity_index column representing total consumption across substances and a heavy_user column to display/flag frequent daily and weekly drug users.
+6. **Data Validation:** Checked for duplicates, outliers, and consistent value ranges.
+7. **Normalize Personality Scores:** Used for comparison (using Min-Max scaling or Z-scores).
+8. **Verify Data Balance:** Verified for all demographics and personality traits. 
 
 **Code Reference:** src/data_cleaning.py 
 
@@ -76,13 +79,15 @@ Personality traits (such as Neuroticism, Impulsivity, and Sensation Seeking) and
 
 ### Tools & Libraries
 - Python, Pandas  
-- Matplotlib, Seaborn  
+- Matplotlib, Seaborn
+- Scikit-learn(sklearn)
 
 
 ### Key Steps
 1. Data cleaning and quantification of variables  
 2. Exploratory Data Analysis (EDA) and correlation analysis  
-3. Visual insights into behavior and drug patterns  
+3. Visual insights into behavior and drug patterns
+4. Clustering or statistical modeling  
 5. Key findings and recommendations  
 
 ### Reference

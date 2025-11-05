@@ -1,4 +1,9 @@
 import pandas as pd
+from sklearn.preprocessing import MinMaxScaler, StandardScaler
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+
 
 # Creates global constants for filepaths
 FILEPATH_RAW = '../data/raw/Drug_Consumption.csv'
@@ -34,7 +39,7 @@ def convert_drug_use_ratings(df: pd.DataFrame, drug_cols: list) -> pd.DataFrame:
   return df
 
 """Converts age ranges in Age column to their midpoint numerical values."""
-def convert_to_midpoint(df: pd.DataFrame, drug_cols: list) -> pd.DataFrame:
+def convert_to_midpoint(df: pd.DataFrame, age_col: list) -> pd.DataFrame:
    
     midpoint_dict = {
         '18-24': 21,    
@@ -45,7 +50,7 @@ def convert_to_midpoint(df: pd.DataFrame, drug_cols: list) -> pd.DataFrame:
         '65+': 70,
     }
 
-    df[drug_cols] = df[drug_cols].replace(midpoint_dict)
+    df[age_col] = df[age_col].replace(midpoint_dict)
     return df
 
 """Changes column headers for personality traits to more descriptive names."""
@@ -62,8 +67,101 @@ def rename_personality_traits(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 """
-Creates a drug_intensity_position representing total consumption across substances.
+Creates a drug_intensity_position column representing total consumption across substances.
 """
 def add_drug_intensity_position(df: pd.DataFrame, drug_cols: list) -> pd.DataFrame:
     df['drug_intensity_position'] = df[drug_cols].sum(axis=1)
     return df
+
+""" Changes column names for some of the drug column names to be more descriptive. """
+
+def rename_drug_columns(df: pd.DataFrame) -> pd.DataFrame:
+    df = df.rename(columns={
+        'Amphet': 'amphetamine',
+        'Amyl': 'amyl_nitrate',
+        'Benzos': 'benzodiazepines',
+        'Caff': 'caffeine', 
+        'Choc': 'chocolate',
+        'Coke': 'cocaine',
+        'Crack': 'crack_cocaine',
+        'Legalh': 'legal_highs',
+        'Meth': 'methamphetamine',
+        'Mushrooms': 'magic_mushrooms',
+        'VSA': 'volatile_solvent_abuse'
+    })
+    return df
+
+
+"""
+Transforms personality traits scores to numeric values between 0 and 1. This makes comparisons cleaner and more intuitive when plotting graphs
+"""
+def apply_min_max_scaling(df: pd.DataFrame, min_max_personality_traits: list) -> pd.DataFrame:
+    min_max_scaler = MinMaxScaler()
+    df_scaled = df.copy()
+    df_scaled[min_max_personality_traits] = min_max_scaler.fit_transform(df_scaled[min_max_personality_traits])
+    return df_scaled
+
+
+""" Creates function to visualize and verify data balance across demographics and personality traits. """
+
+def visualize_data_balance(df: pd.DataFrame, demographic_cols: list, personality_traits: list) -> None:
+    sns.set_style("whitegrid")
+
+    for col in demographic_cols:
+        plt.figure(figsize=(12, 8))
+        sns.countplot(data=df, x=col)
+        plt.title(f'Distribution of {col}')
+        plt.xlabel(col)
+        plt.ylabel("Count")
+        plt.xticks(rotation=45, ha='right')
+        plt.tight_layout()    
+        plt.show()
+
+    for trait in personality_traits:
+        plt.figure(figsize=(10, 6))
+        sns.histplot(data=df, x=trait, kde=True, bins=20, color='teal')
+        plt.title(f'Distribution of {trait}')
+        plt.ylabel("Frequency")
+        plt.xlabel(trait)
+        plt.xticks(rotation=30, ha='left', fontsize=10, wrap=True)
+        plt.tight_layout()
+
+        plt.show()
+
+    return None
+
+
+"""Creates usage_frequency and heavy_user columns to flag frequent daily and weekly drug users."""
+
+def flag_heavy_users(df: pd.DataFrame, drug_cols: list) -> pd.DataFrame:
+
+    df['usage_frequency'] = df[drug_cols].apply(lambda row: sum(1 for val in row if val >= 5), axis=1)
+    
+    df['heavy_user'] = df['usage_frequency'] >= 5
+
+    summary = pd.DataFrame({
+        'Usage Frequency': ['Never Used', 'Used Over a Decade Ago', 'Used in Last Decade', 'Used in Last Year', 'Monthly User', 'Weekly User', 'Daily User'],
+        'heavy_user': [
+            (df[drug_cols] == 0).sum().sum(),          
+            (df[drug_cols] == 1).sum().sum(),          
+            (df[drug_cols] == 2).sum().sum(),         
+            (df[drug_cols] == 3).sum().sum(), 
+            (df[drug_cols] == 4).sum().sum(),          
+            (df[drug_cols] == 5).sum().sum(),       
+            (df[drug_cols] == 6).sum().sum(),         
+        ]
+    })
+
+    print(summary.to_string(index=False))
+    return df, summary
+
+""" Replaces outlier values that are higher than 6 with the average  value of that column"""
+
+def replace_outliers_with_mean(df: pd.DataFrame, col: str) -> pd.DataFrame:
+
+    mean_value = df[col].mean()  
+    df[col] = df[col].apply(lambda x: mean_value if x > 6 else x)
+    return df
+
+
+

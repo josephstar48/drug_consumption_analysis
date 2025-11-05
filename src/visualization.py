@@ -16,9 +16,6 @@ Can we identify clusters of users based on drug type (e.g., stimulants, depressa
 Is there a relationship between personality factors and the type of substances consumed?
 """
 
-
-
-
 # *****Creates Counterplot graph for demographics of age distribution
 def plot_age_distribution(df: pd.DataFrame, age_col: str) -> None:
     plt.figure(figsize=(10,6))
@@ -57,6 +54,63 @@ def plot_personality_trait_correlation(df: pd.DataFrame) -> None:
     plt.title('Correlation Between Personality Traits')
     plt.tight_layout()
     plt.show()
+
+# *****Creates barplot to visualize usage frequency distribution 
+def plot_drug_usage_distribution(df: pd.DataFrame) -> None:
+    plt.figure(figsize=(10, 6))
+    sns.barplot(
+        data=df,
+        x='Usage Frequency',
+        y='heavy_user',
+        hue='Usage Frequency',
+        palette='viridis',
+        legend=False
+    )
+
+    plt.title("Drug Usage Frequency Distribution", fontsize=14)
+    plt.xlabel("Usage Frequency", fontsize=12)
+    plt.ylabel("Number of Users", fontsize=12)
+    plt.xticks(rotation=45, ha='right')
+    plt.tight_layout()
+    plt.show()
+
+    return None
+
+# ***** Combines daily and weekly into heavy users usage and creates graphs for visualization of heavy users
+
+def combine_and_plot_heavy_users(df: pd.DataFrame) -> pd.DataFrame:
+
+    mask = df['Usage Frequency'].isin(['Daily User', 'Weekly User'])
+    heavy_user_total = df.loc[mask, 'heavy_user'].sum()
+    df = df[~mask]
+    df = pd.concat([
+        df,
+        pd.DataFrame({'Usage Frequency': ['Heavy User'], 'heavy_user': [heavy_user_total]})
+    ], ignore_index=True)
+
+    df = df.sort_values('heavy_user', ascending=False)
+    
+    plt.figure(figsize=(10, 6))
+    sns.barplot(
+        data=df,
+        x='Usage Frequency',
+        y='heavy_user',
+        hue='Usage Frequency',
+        palette='viridis',
+        legend=False
+    )
+
+    plt.title("Heavy Drug Usage Frequency (Daily + Weekly Combined as Heavy Users)", fontsize=14)
+    plt.xlabel("Heavy Usage Frequency", fontsize=12)
+    plt.ylabel("Number of Heavy Users", fontsize=12)
+    plt.xticks(rotation=45, ha='right')
+    plt.tight_layout()
+    plt.show()
+
+    return df
+
+
+
 
 # Creates Correlation Heatmap for personality traits and drug use
 def plot_personality_drug_correlation_heatmap(df: pd.DataFrame, drug_cols: list) -> None:
