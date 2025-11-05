@@ -80,9 +80,9 @@ def plot_drug_usage_distribution(df: pd.DataFrame) -> None:
 
 def combine_and_plot_heavy_users(df: pd.DataFrame) -> pd.DataFrame:
 
-    mask = df['Usage Frequency'].isin(['Daily User', 'Weekly User'])
-    heavy_user_total = df.loc[mask, 'heavy_user'].sum()
-    df = df[~mask]
+    boolean_mask = df['Usage Frequency'].isin(['Daily User', 'Weekly User'])
+    heavy_user_total = df.loc[boolean_mask, 'heavy_user'].sum()
+    df = df[~boolean_mask]
     df = pd.concat([
         df,
         pd.DataFrame({'Usage Frequency': ['Heavy User'], 'heavy_user': [heavy_user_total]})

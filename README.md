@@ -52,7 +52,11 @@ Personality traits (such as Neuroticism, Impulsivity, and Sensation Seeking) and
 7. **Normalize Personality Scores:** Used for comparison (using Min-Max scaling or Z-scores).
 8. **Verify Data Balance:** Verified for all demographics and personality traits. 
 
-**Code Reference:** src/data_cleaning.py 
+**Code References:** 
+- src/data_cleaning.py 
+- src/visualization.py
+
+### Visualization Steps
 
 ### Exploratory Visualizations
 
@@ -64,7 +68,7 @@ Personality traits (such as Neuroticism, Impulsivity, and Sensation Seeking) and
 | Boxplot               | Personality scores vs. drug usage          | Compare behavioral patterns                      |
 | Pairplot              | Between key personality traits             | Detect natural clustering                        |
 | Cluster Map           | KMeans or hierarchical clustering          | Group users by usage patterns                    |
-| Word Cloud            | Drug frequency visualization               | Visual storytelling                              |
+| Word Cloud            | Drug frequency visualization               | Visual storytelling                          |
 
 ### Key Analytical Steps
 -	Compute correlation matrix to find strongest personality–drug use relationships.
@@ -73,7 +77,30 @@ Personality traits (such as Neuroticism, Impulsivity, and Sensation Seeking) and
 -	Use Principal Component Analysis (PCA) or KMeans clustering to group similar user profiles.
 -	Visualize personality clusters and consumption intensity.
 
+
+### Visualization/Graphs with Analysis 
+
+- **Counterplot Graph:** Demographics and Age Distribution
+
+- **Counterplot Graph:** Gender Disctribution
+
+- **Stacked Bar Graph:** Most Frequently Used Substances/Drugs
+
+- **Heatmap Graph:** Personality Traits
+
+- **Barplot Graph:** Drug Usage Frequency Distribution
+
+- **Barplot Graph:** Heavy Users (Daily and Weekly Users)
+
+
+
 ### Key Insights 
+
+
+### Recommendations
+
+
+### Future Work/Research
 
 
 
