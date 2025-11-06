@@ -53,8 +53,8 @@ Personality traits (such as Neuroticism, Impulsivity, and Sensation Seeking) and
 8. **Verify Data Balance:** Verified for all demographics and personality traits. 
 
 **Code References:** 
-- src/data_cleaning.py 
-- src/visualization.py
+- ![Data Cleaning py File](src/data_cleaning.py) 
+- ![Visualization py File](src/visualization.py)
 
 ### Visualization Steps
 For this project, I used visualizations to explore patterns between personality traits, demographics, and drug use.
@@ -103,9 +103,17 @@ These steps helped me visualize key relationships and understand how personality
 
 ### Visualization/Graphs with Analysis 
 
-- **Counterplot Graph:** Demographics and Age Distribution
-
-- **Counterplot Graph:** Gender Disctribution
+- **Counterplot/Bar Graphs:** Demographics
+![Gender Graph](img/4_gender_distribution.png)
+- **Analysis:**
+![Age Graph](img/3_age_distribution.png)
+- **Analysis:**
+![Education Graph](img/8_education_distribution.png)
+- **Analysis:**
+![Country Graph](img/11_country_distribution.png)
+- **Analysis:**
+![Ethnicity Graph](img/12_ethnicity_distribution)
+- **Analysis:**
 
 - **Stacked Bar Graph:** Most Frequently Used Substances/Drugs
 
