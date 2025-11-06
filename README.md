@@ -57,6 +57,29 @@ Personality traits (such as Neuroticism, Impulsivity, and Sensation Seeking) and
 - src/visualization.py
 
 ### Visualization Steps
+For this project, I used visualizations to explore patterns between personality traits, demographics, and drug use.
+
+**Here are the main visualization steps I followed:**
+
+1. Demographics:
+- Plotted age, gender, and education distributions to understand who was in the dataset.
+
+2. Personality vs. Drug Use:
+- Used heatmaps to see how traits like impulsivity and sensation-seeking relate to total drug use.
+
+3. Specific Drug Patterns:
+- Created barplots to explore how impulsivity affects use of different types pf drugs to include: cannabis, cocaine, and LSD.
+
+4. Demographic Influence:
+- Used boxplots to compare drug use intensity across age, gender, and education levels.
+
+5. Clustering & Relationships:
+- Built pairplots to find patterns between different drug types and user groups.
+
+6. Summary:
+- Created a bar chart of the top 5 most commonly used substances for quick insight.
+
+These steps helped me visualize key relationships and understand how personality and demographics influence drug use.
 
 ### Exploratory Visualizations
 
@@ -92,23 +115,31 @@ Personality traits (such as Neuroticism, Impulsivity, and Sensation Seeking) and
 
 - **Barplot Graph:** Heavy Users (Daily and Weekly Users)
 
-
-
 ### Key Insights 
-
+- Impulsive and sensation-seeking personality traits strongly predict drug use. 
+- Neuroticism correlates with depressant and stimulant drug consumption.  
+- Higher education and age relate to lower overall drug frequency.
+- Higher Impulsivity and Sensation Seeking scores correlate strongly with different types of drugs (stimulants, depressants, and hallucinogens).
+- Neuroticism shows higher averages among depressant users (benzodiazepines).
+- Older and more educated participants report lower frequency of illicit drug use.
+- Openness personality trait also correlates correlate strongly with different types of drugs (stimulants, depressants, and hallucinogens).
 
 ### Recommendations
-
+- Public health campaigns can target higher-risk personality groups with customized interventions.
+- Behavioral research can incorporate personality analytics into early screening models.
+- Future predictive modeling: Build classification models (Logistic Regression, Random Forest) to predict high-risk users.
+- Integrate personality insights into early prevention and intervention strategies.
 
 ### Future Work/Research
-
-
+- Extend analysis using predictive modeling and dashboard visualization.
+- Include temporal data (usage frequency changes over time).
+- Integrate social or economic factors like income and employment.
+- Build an interactive dashboard with Plotly or Tableau for real-time analysis.
 
 ### Tools & Libraries
-- Python, Pandas  
+- Python, Pandas, Numpy  
 - Matplotlib, Seaborn
 - Scikit-learn(sklearn)
-
 
 ### Key Steps
 1. Data cleaning and quantification of variables  
