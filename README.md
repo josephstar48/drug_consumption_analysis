@@ -53,9 +53,8 @@ Personality traits (such as Neuroticism, Impulsivity, and Sensation Seeking) and
 8. **Verify Data Balance:** Verified for all demographics and personality traits. 
 
 **Code References:** 
-- (src/data_cleaning.py) 
-- (src/visualization.py)
-
+- [Data Cleaning Functions](src/data_cleaning.py)
+- [Visualization Functions](src/visualization.py)
 ### Visualization Steps
 For this project, I used visualizations to explore patterns between personality traits, demographics, and drug use.
 
@@ -129,13 +128,33 @@ These steps helped me visualize key relationships and understand how personality
 
 **Analysis:**
 
-- **Stacked Bar Graph:** Most Frequently Used Substances/Drugs
+- **Bar Graph:** Most Frequently Used Substances/Drugs
+![Drugs Graph](img/10_top_five_used_drugs.png)
 
-- **Heatmap Graph:** Personality Traits
+**Analysis:**
+
+- **Heatmap Graphs:** Personality Traits
+### Correlation Between Personality Traits
+![Personality Traits Graph](img/6_corr_heatmap_personality_traits.png)
+
+**Analysis:**
+
+### Correlation Between Personality Traits and Drugs
+![Personality Traits and Drugs  Graph](img/7_corr_heatmap_drug_personality.png)
+
+**Analysis:**
 
 - **Barplot Graph:** Drug Usage Frequency Distribution
+### Drug Usage Frequency Distribution
+![Drug Usage Frequency Graph](img/1_drug_usage_freq_dist.png)
+
+**Analysis:**
 
 - **Barplot Graph:** Heavy Users (Daily and Weekly Users)
+### Heavy Users
+![Heavy Users Frequency Graph](img/2_heavy_drug_usage_freq.png)
+
+**Analysis:**
 
 ### Key Insights 
 - Impulsive and sensation-seeking personality traits strongly predict drug use. 
