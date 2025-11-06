@@ -3,8 +3,6 @@ from sklearn.preprocessing import MinMaxScaler
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-
-
 # Creates global constants for filepaths
 FILEPATH_RAW = '../data/raw/Drug_Consumption.csv'
 FILEPATH_CLEANED = '../data/cleaned/cleaned_drug_consumption.csv'

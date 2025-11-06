@@ -55,6 +55,7 @@ Personality traits (such as Neuroticism, Impulsivity, and Sensation Seeking) and
 **Code References:** 
 - [Data Cleaning Functions](src/data_cleaning.py)
 - [Visualization Functions](src/visualization.py)
+
 ### Visualization Steps
 For this project, I used visualizations to explore patterns between personality traits, demographics, and drug use.
 
@@ -99,7 +100,6 @@ These steps helped me visualize key relationships and understand how personality
 -	Use Principal Component Analysis (PCA) or KMeans clustering to group similar user profiles.
 -	Visualize personality clusters and consumption intensity.
 
-
 ### Visualization/Graphs with Analysis 
 
 - **Counterplot/Bar Graphs:** Demographics
@@ -107,55 +107,65 @@ These steps helped me visualize key relationships and understand how personality
 ![Gender Graph](img/4_gender_distribution.png)
 
 **Analysis:**
+The Gender Distribution graph shows that the number of male and female participants is almost the same, meaning the dataset has a balanced gender distribution.
 
 ### Age Distribution
 ![Age Graph](img/3_age_distribution.png)
 
 **Analysis:**
+The Age Distribution graph shows that most participants are young adults between 18 and 30 years old, and the number of participants decreases as age increases.
 
 ### Education Distribution
 ![Education Graph](img/8_education_distribution.png)
 
 **Analysis:**
+The Education Distribution graph shows that most participants have a university degree or left school around age 16, showing a mix of higher education and early school leavers in the dataset.
 
 ### Country Distribution
 ![Country Graph](img/11_country_distribution.png)
 
 **Analysis:**
+The Country Distribution graph shows that most participants are from the UK, followed by the United States and Canada; which indicates that the dataset mainly represents English-speaking countries.
 
 ### Ethnicity Distribution
 ![Ethnicity Graph](img/12_ethnicity_distribution.png)
 
 **Analysis:**
+The Ethnicity Distribution graph shows that most participants identify as White, with smaller representation from other ethnic groups, indicating limited diversity in the dataset.
 
 - **Bar Graph:** Most Frequently Used Substances/Drugs
 ### Mosty Frequently Used Substance
 ![Drugs Graph](img/10_top_five_used_drugs.png)
 
 **Analysis:**
+TheThe Drug Usage Frequency Distribution Graph shows that Caffeine, chocolate, and alcohol are the most used substances, while nicotine and cannabis are used less frequently. 
 
 - **Heatmap Graphs:** Personality Traits
 ### Correlation Between Personality Traits
 ![Personality Traits Graph](img/6_corr_heatmap_personality_traits.png)
 
 **Analysis:**
+The Personality Traits graph shows that impulsivity and sensation seeking are strongly related, while neuroticism tends to be opposite of personality traits like extraversion and conscientiousness.
 
 ### Correlation Between Personality Traits and Drugs
-![Personality Traits and Drugs  Graph](img/7_corr_heatmap_drug_personality.png)
+![Personality Traits and Drugs Graph](img/7_corr_heatmap_drug_personality.png)
 
 **Analysis:**
+The Personality Traits and Drugs Correlation graph shows that people with higher sensation-seeking and impulsivity scores are more likely to use al different types of drugs, while conscientious individuals tend to use drugs a lot less.
 
 - **Barplot Graph:** Drug Usage Frequency Distribution
 ### Drug Usage Frequency Distribution
 ![Drug Usage Frequency Graph](img/1_drug_usage_freq_dist.png)
 
 **Analysis:**
+The Drug Usage Frequency Distribution graph shows that most people in the dataset have never used drugs, while a smaller group reported daily or occasional use, showing that regular drug use is less common among participants.
 
 - **Barplot Graph:** Heavy Users (Daily and Weekly Users)
 ### Heavy Users
 ![Heavy Users Frequency Graph](img/2_heavy_drug_usage_freq.png)
 
 **Analysis:**
+The Heavy Drug Users graph shows that most people have never used drugs, while a smaller portion are heavy users who use daily or weekly, showing that frequent drug use is relatively uncommon.
 
 ### Key Insights 
 - Impulsive and sensation-seeking personality traits strongly predict drug use. 

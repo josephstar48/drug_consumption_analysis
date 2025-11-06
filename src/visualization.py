@@ -3,20 +3,6 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import numpy as np
 
-"""
-Personality traits (such as Neuroticism, Impulsivity, and Sensation Seeking) and demographic factors (age, gender, education) significantly influence the likelihood and frequency of drug consumption.
-
-Do personality traits and demographics predict the likelihood and frequency of drug consumption?
-
-Are impulsive or sensation-seeking individuals more likely to use psychoactive substances (e.g., cannabis, cocaine, LSD)?
-
-How do demographics such as age, gender, and education level influence drug usage patterns?
-
-Can we identify clusters of users based on drug type (e.g., stimulants, depressants, hallucinogens)?
-
-Is there a relationship between personality factors and the type of substances consumed?
-"""
-
 # *Creates Counterplot graph for demographics of age distribution
 def plot_age_distribution(df: pd.DataFrame, age_col: str) -> None:
     plt.figure(figsize=(10,6))
@@ -25,8 +11,10 @@ def plot_age_distribution(df: pd.DataFrame, age_col: str) -> None:
     plt.xlabel('Age')
     plt.ylabel('Count')
     plt.show() 
+
     
 # *Creates Counteplot Graph for gender distribution
+
 def plot_gender_distribution(df: pd.DataFrame, gender_col: str) -> None:
     plt.figure(figsize=(8,6))
     sns.countplot(data=df, x=gender_col)
@@ -35,7 +23,9 @@ def plot_gender_distribution(df: pd.DataFrame, gender_col: str) -> None:
     plt.ylabel('Count') 
     plt.show()
 
+
 # *Creates Stacked Bar Graph for Most Frequently used Drugs
+
 def plot_drug_usage_frequency(df: pd.DataFrame, drug_columns: list) -> None:
     
     plt.figure(figsize=(16,12))
@@ -47,7 +37,9 @@ def plot_drug_usage_frequency(df: pd.DataFrame, drug_columns: list) -> None:
     plt.legend(title='Usage Level')
     plt.show()
 
+
 # *Creates barplot to visualize usage frequency distribution 
+
 def plot_drug_usage_distribution(df: pd.DataFrame) -> None:
     plt.figure(figsize=(10, 6))
     sns.barplot(
@@ -65,8 +57,8 @@ def plot_drug_usage_distribution(df: pd.DataFrame) -> None:
     plt.xticks(rotation=45, ha='right')
     plt.tight_layout()
     plt.show()
-
     return None
+
 
 # *Combines daily and weekly into heavy users usage and creates graphs for visualization of heavy users
 
@@ -98,10 +90,11 @@ def combine_and_plot_heavy_users(df: pd.DataFrame) -> pd.DataFrame:
     plt.xticks(rotation=45, ha='right')
     plt.tight_layout()
     plt.show()
-
     return df
 
+
 # *Creates Correlation Heatmap for personality traits and drug use
+
 def plot_personality_drug_correlation_heatmap(df: pd.DataFrame, drug_cols: list) -> None:
     traits = ['neuroticism_nscore', 'extraversion_escore', 'openness_oscore', 'agreeableness_ascore', 'conscientiousness_cscore', 'impulsivity_impulsive', 'sensation_seeking_ss']
     
@@ -125,7 +118,9 @@ def plot_personality_drug_correlation_heatmap(df: pd.DataFrame, drug_cols: list)
     plt.tight_layout()
     plt.show()
 
+
 # *Creates correlation heatmap for personality traits
+
 def plot_personality_trait_correlation(df: pd.DataFrame) -> None:
     plt.figure(figsize=(10,8))
     traits = ['neuroticism_nscore', 'extraversion_escore', 'openness_oscore', 'agreeableness_ascore', 'conscientiousness_cscore', 'impulsivity_impulsive', 'sensation_seeking_ss']
@@ -134,6 +129,7 @@ def plot_personality_trait_correlation(df: pd.DataFrame) -> None:
     plt.title('Correlation Between Personality Traits')
     plt.tight_layout()
     plt.show()
+
 
 # Creates a stacked bar chart showing personality traits vs. drug intensity levels. 
 
@@ -199,6 +195,7 @@ def plot_trait_drug_barplots(df: pd.DataFrame, traits: list, drugs: list) -> Non
             plt.tight_layout()
             plt.show()
 
+
 # Creates a boxplot to compare drug use intensity across age, gender, and education levels.
 
 def plot_drug_intensity_by_demographics(df: pd.DataFrame) -> None:
@@ -231,6 +228,7 @@ def plot_drug_intensity_by_demographics(df: pd.DataFrame) -> None:
     plt.xticks(rotation=45)
     plt.tight_layout()
     plt.show()
+
 
 # Creates a pairplot to find patterns between different drug types and user groups.
 
