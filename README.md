@@ -125,7 +125,7 @@ These steps helped me visualize key relationships and understand how personality
 **Analysis:**
 
 ### Ethnicity Distribution
-![Ethnicity Graph](img/12_ethnicity_distribution)
+![Ethnicity Graph](img/12_ethnicity_distribution.png)
 
 **Analysis:**
 
