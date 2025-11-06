@@ -176,7 +176,7 @@ def plot_personality_drug_intensity_stacked(df: pd.DataFrame) -> None:
 
 def plot_trait_drug_barplots(df: pd.DataFrame, traits: list, drugs: list) -> None:
 
-    sns.set(style="whitegrid", palette="muted", font_scale=1.1)
+    sns.set_theme(style="whitegrid", palette="muted", font_scale=1.1)
     plt.figure(figsize=(16, 12))
 
     for trait in traits:
@@ -185,9 +185,11 @@ def plot_trait_drug_barplots(df: pd.DataFrame, traits: list, drugs: list) -> Non
             sns.barplot(
                 x=drug,
                 y=trait,
+                hue=drug, 
                 data=df,
-                ci=None,
-                palette="coolwarm"
+                errorbar=None, 
+                palette="coolwarm",
+                legend=False
             )
             plt.title(f"{trait} vs. {drug} Usage Level", fontsize=14, fontweight='bold')
             plt.xlabel(f"{drug} Use (0–6)", fontsize=12)
@@ -200,11 +202,12 @@ def plot_trait_drug_barplots(df: pd.DataFrame, traits: list, drugs: list) -> Non
 
 def plot_drug_intensity_by_demographics(df: pd.DataFrame) -> None:
 
-    sns.set(style="whitegrid", palette="muted", font_scale=1.1)
+    sns.set_theme(style="whitegrid", palette="muted", font_scale=1.1)
     plt.figure(figsize=(16, 12))
 
     plt.figure(figsize=(8, 5))
-    sns.boxplot(x='age', y='drug_intensity_position', data=df, palette='Blues')
+    sns.boxplot(x='age', y='drug_intensity_position', hue='age', data=df, palette='Blues', legend=False)
+
     plt.title("Drug Use Intensity by Age Group", fontsize=14, fontweight='bold')
     plt.xlabel("Age Group")
     plt.ylabel("Drug Intensity Index")
@@ -213,7 +216,8 @@ def plot_drug_intensity_by_demographics(df: pd.DataFrame) -> None:
     plt.show()
 
     plt.figure(figsize=(8, 5))
-    sns.boxplot(x='gender', y='drug_intensity_position', data=df, palette='Set2')
+    sns.boxplot(x='gender', y='drug_intensity_position', hue='gender', data=df, palette='Set2', legend=False)
+
     plt.title("Drug Use Intensity by Gender", fontsize=14, fontweight='bold')
     plt.xlabel("Gender")
     plt.ylabel("Drug Intensity Index")
@@ -221,7 +225,8 @@ def plot_drug_intensity_by_demographics(df: pd.DataFrame) -> None:
     plt.show()
 
     plt.figure(figsize=(8, 5))
-    sns.boxplot(x='education', y='drug_intensity_position', data=df, palette='viridis')
+    sns.boxplot(x='education', y='drug_intensity_position', hue='education', data=df, palette='viridis')
+
     plt.title("Drug Use Intensity by Education Level", fontsize=14, fontweight='bold')
     plt.xlabel("Education Level")
     plt.ylabel("Drug Intensity Index")
@@ -234,7 +239,7 @@ def plot_drug_intensity_by_demographics(df: pd.DataFrame) -> None:
 
 def plot_drug_pairplot(df: pd.DataFrame, drug_columns: list) -> None:
 
-    sns.set(style="whitegrid", font_scale=1.1)
+    sns.set_theme(style="whitegrid", font_scale=1.1)
 
     pairplot = sns.pairplot(
         df[drug_columns],
@@ -259,12 +264,12 @@ def plot_drug_pairplot(df: pd.DataFrame, drug_columns: list) -> None:
 
 def plot_top_five_drugs(df: pd.DataFrame, drug_columns: list) -> None:
 
-    sns.set(style="whitegrid", font_scale=1.1)
+    sns.set_theme(style="whitegrid", font_scale=1.1)
     plt.figure(figsize=(8, 5))
 
     avg_usage = df[drug_columns].mean().sort_values(ascending=False).head(5)
 
-    sns.barplot(x=avg_usage.index, y=avg_usage.values, palette="coolwarm")
+    sns.barplot(x=avg_usage.index, y=avg_usage.values, palette="coolwarm", hue=avg_usage.index, legend=False)
 
     plt.title("Top 5 Most Commonly Used Substances", fontsize=14, fontweight="bold")
     plt.xlabel("Substance")

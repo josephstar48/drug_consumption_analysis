@@ -134,7 +134,7 @@ The Country Distribution graph shows that most participants are from the UK, fol
 The Ethnicity Distribution graph shows that most participants identify as White, with smaller representation from other ethnic groups, indicating limited diversity in the dataset.
 
 - **Bar Graph:** Most Frequently Used Substances/Drugs
-### Mosty Frequently Used Substance
+### Mosty Frequently Used Substances
 ![Drugs Graph](img/10_top_five_used_drugs.png)
 
 **Analysis:**
