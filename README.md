@@ -56,6 +56,12 @@ Personality traits (such as Neuroticism, Impulsivity, and Sensation Seeking) and
 - [Data Cleaning Functions](src/data_cleaning.py)
 - [Visualization Functions](src/visualization.py)
 
+**Data Exploration, Cleaning & Visualization References:** 
+- [Data Exploration](notebooks/01_data_exploration.ipynb)
+- [Data Cleaning](notebooks/02_data_cleaning.ipynb)
+- [Data Visualization](notebooks/03_visual_analysis.ipynb)
+
+
 ### Visualization Steps
 For this project, I used visualizations to explore patterns between personality traits, demographics, and drug use.
 
